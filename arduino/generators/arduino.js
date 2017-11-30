@@ -75,10 +75,11 @@ Blockly.Arduino.PinTypes = {
   PWM: 'PWM',
   SERVO: 'SERVO',
   STEPPER: 'STEPPER',
-  LCD: 'LCD',
   SERIAL: 'SERIAL',
   I2C: 'I2C/TWI',
-  SPI: 'SPI'
+  SPI: 'SPI',
+  LCD: 'LCD',
+  MUSIQUE: 'MUSIQUE'
 };
 
 /**

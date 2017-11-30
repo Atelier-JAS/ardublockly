@@ -88,7 +88,7 @@ Ardublockly.LOCALISED_TEXT = {
   cancel: "Cancel",
   return: "Return",
   /* Cards */
-  arduinoSourceCode: "Arduino Source Code",
+  arduinoSourceCode: "Arduino",
   blocksXml: "Blocks XML",
   /* Toolbox Categories*/
   catLogic: "Logic",
@@ -105,5 +105,6 @@ Ardublockly.LOCALISED_TEXT = {
   catArduino: "Arduino",
   catAddon: "Addons",
   catLCD: "LCD display",
-  catArrays: "Arrays"
+  catArrays: "Arrays",
+  catMusical: "Music"
 };

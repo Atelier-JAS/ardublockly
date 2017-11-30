@@ -87,5 +87,6 @@ Ardublockly.LOCALISED_TEXT = {
   catArduino: "Arduino",
   catAddon: "Ajouts",
   catLCD: "Affichage LCD",
-  catArrays: "Tableaux"
+  catArrays: "Tableaux",
+  catMusical: "Musique"
 };

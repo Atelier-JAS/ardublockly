@@ -271,5 +271,13 @@ Ardublockly.TOOLBOX_XML =
 '       <block type="array_set">' +
 '       </block>' +
 '  </category>' +
+'  <category id="catMusical" name="Musique">' +
+'       <block type="melody">' +
+'           <field name="PIN">9</field>' +
+'           <field name="BPM">250</field>' +
+'       </block>' +
+'       <block type="note"></block>' +
+'       <block type="play_note"></block>' +
+'  </category>' +
 '  </category>' +
 '</xml>';
