@@ -24,7 +24,7 @@ Ardublockly.LANGUAGE_NAME = {
  * Selected language, default English.
  * @type {string}
  */
-Ardublockly.LANG = 'fr';
+Ardublockly.LANG = 'en';
 
 /**
  * We keep a local copy of the default language in case translations cannot
@@ -145,6 +145,10 @@ Ardublockly.injectLanguageJsSources = function(langKey) {
   var blocklyLangJsLoad = document.createElement('script');
   blocklyLangJsLoad.src = '../blockly/msg/js/' + langKey + '.js';
   head.appendChild(blocklyLangJsLoad);
+  // Retrieve and inject Blockly translations asynchronously
+  var arduinoLangJsLoad = document.createElement('script');
+  arduinoLangJsLoad.src = '../arduino/msg/js/' + langKey + '.js';
+  head.appendChild(arduinoLangJsLoad);
 };
 
 /** Saves the blocks and reloads with a different language. */

@@ -89,6 +89,15 @@ def static_blockly(file_path):
     """
     return static_file(file_path, root=os.path.join(document_root, 'blockly'))
 
+@app.route('/arduino/<file_path:path>')
+def static_blockly(file_path):
+    """Serve the 'arduino' folder static files.
+
+    :param file_path: File path inside the 'arduino' folder.
+    :return: Full HTTPResponse for the static file.
+    """
+    return static_file(file_path, root=os.path.join(document_root, 'arduino'))
+
 
 @app.route('/blocks/<file_path:path>')
 def static_blocks(file_path):
