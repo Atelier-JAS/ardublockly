@@ -496,6 +496,92 @@ class Gen_langfiles(threading.Thread):
     """
     self.generate_blockly()
     # Ardublockly appends it's strings at the end of blockly output
+    # self.generate_ardublockly()
+
+
+class Gen_langfiles_arduino(threading.Thread):
+  """Generate JavaScript file for each natural language supported.
+
+  Runs in a separate thread.
+  """
+
+  def __init__(self):
+    threading.Thread.__init__(self)
+
+  def _rebuild(self, srcs, dests):
+    # Determine whether any of the files in srcs is newer than any in dests.
+    try:
+      return (max(os.path.getmtime(src) for src in srcs) >
+              min(os.path.getmtime(dest) for dest in dests))
+    except OSError as e:
+      # Was a file not found?
+      if e.errno == errno.ENOENT:
+        # If it was a source file, we can't proceed.
+        if e.filename in srcs:
+          print("Source file missing: " + e.filename)
+          sys.exit(1)
+        else:
+          # If a destination file was missing, rebuild.
+          return True
+      else:
+        print("Error checking file creation times: " + e)
+
+  def generate_ardublockly(self):
+    """
+    Recreates the msg/json/{en,qqq,synonyms}_ardublockly.json files if older
+    than msg/messages_ardublockly.js.
+    Then attaches the {lang}_ardublockly.json strings into the {lang}.js files.
+    """
+    # The files msg/json/{en,qqq,synonyms}.json depend on msg/messages.js.
+    if self._rebuild([os.path.join("arduino", "msg", "messages_ardublockly.js")],
+                     [os.path.join("arduino", "msg", "json", f) for f in
+                      ["en_ardublockly.json",
+                       "qqq_ardublockly.json",
+                       "synonyms_ardublockly.json"]]):
+      try:
+        subprocess.check_call([
+            "python",
+            os.path.join("i18n", "js_to_json.py"),
+            "--author", "carlosperate",
+            "--input_file", "arduino/msg/messages_ardublockly.js",
+            "--output_dir", "arduino/msg/json/",
+            "--ardublockly",
+            "--quiet"])
+      except (subprocess.CalledProcessError, OSError) as e:
+        print("Error running i18n/js_to_json.py for Ardublockly pass: ", e)
+        sys.exit(1)
+
+    try:
+      # Use create_messages.py to attach _ardublockly.json strings to .js files
+      cmd = [
+          "python",
+          os.path.join("i18n", "create_messages.py"),
+          "--source_lang_file", os.path.join("arduino","msg","json",
+                                             "en_ardublockly.json"),
+          "--source_synonym_file", os.path.join("arduino","msg", "json",
+                                                "synonyms_ardublockly.json"),
+          "--output_dir", os.path.join("arduino", "msg", "js"),
+          "--ardublockly",
+          "--quiet"]
+      json_files = glob.glob(os.path.join("arduino","msg", "json", "*.json"))
+      print(json_files)
+      json_files = [file for file in json_files if not
+                    (file.endswith(("keys.json", "synonyms.json", "qqq.json"
+                                    #, "_ardublockly.json"
+                                    )))]
+      cmd.extend(json_files)
+      print(json_files)
+      subprocess.check_call(cmd)
+    except (subprocess.CalledProcessError, OSError) as e:
+      print("Error running i18n/create_messages.py for Ardublockly pass: ", e)
+      sys.exit(1)
+
+  def run(self):
+    """
+    Runs the thread to generate the Blockly JavaScript string files and append
+    the Ardublockly strings at the end as well.
+    """
+    # Ardublockly appends it's strings at the end of blockly output
     self.generate_ardublockly()
 
 
@@ -527,8 +613,9 @@ https://developers.google.com/blockly/hacking/closure""")
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.
   # Compressed is limited by network and server speed.
-  Gen_uncompressed(search_paths).start()
-  Gen_compressed(search_paths).start()
+  # Gen_uncompressed(search_paths).start()
+  # Gen_compressed(search_paths).start()
 
   # This is run locally in a separate thread.
-  Gen_langfiles().start()
+  # Gen_langfiles().start()
+  Gen_langfiles_arduino().start ()

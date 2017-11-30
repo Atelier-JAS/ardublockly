@@ -176,3 +176,23 @@ Blockly.Msg.RENAME_INSTANCE = 'Rename instance...';
 Blockly.Msg.NEW_INSTANCE_TITLE = 'New instance name:';
 /// Instances - Confirmation message that a number of instances will be renamed to a new name
 Blockly.Msg.RENAME_INSTANCE_TITLE = 'Rename all "%1" instances to:';
+///
+Blockly.Msg.ARD_LCD_SETUP = 'Setup LCD';
+///
+Blockly.Msg.ARD_LCD_DATACOUNT = 'Number of data';
+///
+Blockly.Msg.ARD_LCD_HASRW = 'RW signal connected ?';
+///
+Blockly.Msg.ARD_LCD_ROWS = 'Number of rows';
+///
+Blockly.Msg.ARD_LCD_COLS = 'Number of columns';
+///
+Blockly.Msg.ARD_LCD_SETUP_HINT = 'Setup the LCD display from arduino starter kit';
+///
+Blockly.Msg.ARD_LCD_PRINT = 'Display';
+///
+Blockly.Msg.ARD_LCD_AT = 'at';
+///
+Blockly.Msg.ARD_LCD_PRINT_HINT = 'Print a message on the LCD display of the arduino';
+///
+Blockly.Msg.ARD_LCD_PRINT_NOINST = 'A configuration bloc for LCD display must be added to use this block!';
