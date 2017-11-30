@@ -174,15 +174,15 @@ class Gen_compressed(threading.Thread):
     self.search_paths = search_paths
 
   def run(self):
-    self.gen_core()
+    #self.gen_core()
+    #self.gen_blocks(".",".")
+    #self.gen_generator("javascript", ".", ".")
+    #self.gen_generator("python", ".", ".")
+    #self.gen_generator("php", ".", ".")
+    #self.gen_generator("dart", ".", ".")
+    #self.gen_generator("lua", ".", ".")
     self.gen_blocks(".",".")
-    self.gen_generator("javascript", ".", ".")
-    self.gen_generator("python", ".", ".")
-    self.gen_generator("php", ".", ".")
-    self.gen_generator("dart", ".", ".")
-    self.gen_generator("lua", ".", ".")
-    #self.gen_blocks("arduino","arduino")
-    #self.gen_generator("arduino", "arduino", "arduino")
+    self.gen_generator("arduino", ".", ".")
 
   def gen_core(self):
     target_filename = "blockly_compressed.js"
@@ -400,7 +400,7 @@ class Gen_langfiles(threading.Thread):
       try:
         subprocess.check_call([
             "python",
-            os.path.join("i18n", "js_to_json.py"),
+            os.path.join("../i18n", "js_to_json.py"),
             "--input_file", "msg/messages.js",
             "--output_dir", "msg/json/",
             "--quiet"])
@@ -417,7 +417,7 @@ class Gen_langfiles(threading.Thread):
       # Use create_messages.py to create .js files from .json files.
       cmd = [
           "python",
-          os.path.join("i18n", "create_messages.py"),
+          os.path.join("../i18n", "create_messages.py"),
           "--source_lang_file", os.path.join("msg", "json", "en.json"),
           "--source_synonym_file", os.path.join("msg", "json", "synonyms.json"),
           "--key_file", os.path.join("msg", "json", "keys.json"),
@@ -567,7 +567,7 @@ class Gen_langfiles_arduino(threading.Thread):
       print(json_files)
       json_files = [file for file in json_files if not
                     (file.endswith(("keys.json", "synonyms.json", "qqq.json"
-                                    , "_ardublockly.json"
+                                    #, "_ardublockly.json"
                                     )))]
       cmd.extend(json_files)
       print(json_files)
@@ -588,7 +588,7 @@ class Gen_langfiles_arduino(threading.Thread):
 if __name__ == "__main__":
   try:
     calcdeps = import_path(os.path.join(
-        os.path.pardir, "closure-library", "closure", "bin", "calcdeps.py"))
+        os.path.pardir, "..", "closure-library", "closure", "bin", "calcdeps.py"))
   except ImportError:
     if os.path.isdir(os.path.join(os.path.pardir, "closure-library-read-only")):
       # Dir got renamed when Closure moved from Google Code to GitHub in 2014.
@@ -613,9 +613,9 @@ https://developers.google.com/blockly/hacking/closure""")
   # Run both tasks in parallel threads.
   # Uncompressed is limited by processor speed.
   # Compressed is limited by network and server speed.
-  Gen_uncompressed(search_paths).start()
+  # Gen_uncompressed(search_paths).start()
   Gen_compressed(search_paths).start()
 
   # This is run locally in a separate thread.
   Gen_langfiles().start()
-  #Gen_langfiles_arduino().start ()
+  # Gen_langfiles_arduino().start ()

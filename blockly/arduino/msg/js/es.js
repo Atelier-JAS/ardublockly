@@ -1,6 +1,11 @@
+// This file was automatically generated.  Do not modify.
 
+'use strict';
 
-// Ardublockly strings
+goog.provide('Blockly.Msg.es');
+
+goog.require('Blockly.Msg');
+
 Blockly.Msg.ARD_ANALOGREAD = "read analog pin#";  // untranslated
 Blockly.Msg.ARD_ANALOGREAD_TIP = "Return value between 0 and 1024";  // untranslated
 Blockly.Msg.ARD_ANALOGWRITE = "set analog pin#";  // untranslated
@@ -37,10 +42,10 @@ Blockly.Msg.ARD_NOTONE_PIN = "No tone PIN#";  // untranslated
 Blockly.Msg.ARD_NOTONE_PIN_TIP = "Stop generating a tone on a pin";  // untranslated
 Blockly.Msg.ARD_NOTONE_TIP = "Turns the tone off on the selected pin";  // untranslated
 Blockly.Msg.ARD_PIN_WARN1 = "Pin %1 is needed for %2 as pin %3. Already used as %4.";  // untranslated
-Blockly.Msg.ARD_PULSETIMEOUT_TIP = "Measures the duration of a pulse on the selected pin, if it is within the time-out in microseconds.";  // untranslated
-Blockly.Msg.ARD_PULSE_READ = "measure %1 pulse on pin #%2";  // untranslated
-Blockly.Msg.ARD_PULSE_READ_TIMEOUT = "measure %1 pulse on pin #%2 (timeout after %3 μs)";  // untranslated
-Blockly.Msg.ARD_PULSE_TIP = "Measures the duration of a pulse on the selected pin.";  // untranslated
+Blockly.Msg.ARD_PULSETIMEOUT_TIP = "Mide la duración de un pulso en el pin especificado y configura el tiempo de espera en micro-segundos.";
+Blockly.Msg.ARD_PULSE_READ = "mide pulso %1 en pin #%2";
+Blockly.Msg.ARD_PULSE_READ_TIMEOUT = "mide pulso %1 en pin #%2 (agotar tiempo en %3 μs)";
+Blockly.Msg.ARD_PULSE_TIP = "Mide la duración de un pulso en el pin especificado.";
 Blockly.Msg.ARD_SERIAL_BPS = "bps";  // untranslated
 Blockly.Msg.ARD_SERIAL_PRINT = "print";  // untranslated
 Blockly.Msg.ARD_SERIAL_PRINT_NEWLINE = "add new line";  // untranslated
@@ -123,7 +128,7 @@ Blockly.Msg.ARD_TYPE_UNDEF = "Undefined";  // untranslated
 Blockly.Msg.ARD_VAR_AS = "as";  // untranslated
 Blockly.Msg.ARD_VAR_AS_TIP = "Sets a value to a specific type";  // untranslated
 Blockly.Msg.ARD_WRITE_TO = "to";  // untranslated
-Blockly.Msg.NEW_INSTANCE = "New instance...";  // untranslated
-Blockly.Msg.NEW_INSTANCE_TITLE = "New instance name:";  // untranslated
-Blockly.Msg.RENAME_INSTANCE = "Rename instance...";  // untranslated
-Blockly.Msg.RENAME_INSTANCE_TITLE = "Rename all '%1' instances to:";  // untranslated
+Blockly.Msg.NEW_INSTANCE = "Nueva instancia...";
+Blockly.Msg.NEW_INSTANCE_TITLE = "Nueva nombre de la instance:";
+Blockly.Msg.RENAME_INSTANCE = "Renombrar la instancia...";
+Blockly.Msg.RENAME_INSTANCE_TITLE = "Renombrar todas las instancias '%1' a:";

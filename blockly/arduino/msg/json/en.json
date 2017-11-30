@@ -1,9 +1,9 @@
 {
 	"@metadata": {
-		"author": "carlosperate",
-		"lastupdated": "2017-11-30 08:58:38.481492",
+		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
+		"lastupdated": "2017-11-30 09:31:47.987076",
 		"locale": "en",
-		"messagedocumentation" : "qqq_ardublockly"
+		"messagedocumentation" : "qqq"
 	},
 	"ARD_TYPE_CHAR": "Character",
 	"ARD_TYPE_TEXT": "Text",
