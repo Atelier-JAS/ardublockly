@@ -112,5 +112,15 @@
 	"ARD_TONE_TIP": " Configurer le signal de tonalité dans la plage: 31 - 65535",
 	"ARD_TONE_WARNING": "La fréquence doit être dans la plage 31 - 65535",
 	"ARD_NOTONE": "Eteindre la tonalité du signal #",
-	"ARD_NOTONE_TIP": "Eteindre / Activer la tonalité du signal selectioné"
+	"ARD_NOTONE_TIP": "Eteindre / Activer la tonalité du signal selectioné",
+	"ARD_LCD_SETUP": "Configurer LCD",
+	"ARD_LCD_DATACOUNT": "Nombre de données",
+	"ARD_LCD_HASRW": "signal RW connecté ?",
+	"ARD_LCD_ROWS": "Nombre de lignes",
+	"ARD_LCD_COLS": "Nombre de colonnes",
+	"ARD_LCD_SETUP_HINT": "Permet de configurer l'écran LCD de l'arduino",
+	"ARD_LCD_PRINT": "Afficher",
+	"ARD_LCD_AT": "en",
+	"ARD_LCD_PRINT_HINT": "Permet d'afficher un message sur l'écran LCD de l'arduino",
+	"ARD_LCD_PRINT_NOINST": "Un bloc de configuration d'écran LCD doit être ajouté afin d'utiliser ce bloc!"
 }

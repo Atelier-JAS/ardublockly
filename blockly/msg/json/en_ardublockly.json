@@ -120,5 +120,15 @@
 	"NEW_INSTANCE": "New instance...",
 	"RENAME_INSTANCE": "Rename instance...",
 	"NEW_INSTANCE_TITLE": "New instance name:",
-	"RENAME_INSTANCE_TITLE": "Rename all '%1' instances to:"
+	"RENAME_INSTANCE_TITLE": "Rename all '%1' instances to:",
+	"ARD_LCD_SETUP": "Setup LCD",
+	"ARD_LCD_DATACOUNT": "Number of data",
+	"ARD_LCD_HASRW": "RW signal connected ?",
+	"ARD_LCD_ROWS": "Number of rows",
+	"ARD_LCD_COLS": "Number of columns",
+	"ARD_LCD_SETUP_HINT": "Setup the LCD display from arduino starter kit",
+	"ARD_LCD_PRINT": "Display",
+	"ARD_LCD_AT": "at",
+	"ARD_LCD_PRINT_HINT": "Print a message on the LCD display of the arduino",
+	"ARD_LCD_PRINT_NOINST": "A configuration bloc for LCD display must be added to use this bloc!"
 }

@@ -122,6 +122,8 @@ Ardublockly.TOOLBOX_XML =
 '  <sep></sep>' +
 '  <category id="catFunctions" name="Functions" custom="PROCEDURE"></category>' +
 '  <sep></sep>' +
+// Added Arduino stuff in sub category
+'  <category id="catArduino" name="Arduino">' +
 '  <category id="catInputOutput" name="Input/Output">' +
 '    <block type="io_digitalwrite">' +
 '      <value name="STATE">' +
@@ -230,5 +232,44 @@ Ardublockly.TOOLBOX_XML =
 '    <block type="spi_setup"></block>' +
 '    <block type="spi_transfer"></block>' +
 '    <block type="spi_transfer_return"></block>' +
+'  </category>' +
+'  </category>' +
+'  <sep></sep>' +
+'  <category id="catAddon" name="Add-ons">' +
+'  <category id="catLCD" name="LiquidCrystal">' +
+'    <block type="lcd_init">' +
+'      <field name="LCD_NUMBER_OF_PINS">4</field>' +
+'      <field name="LCD_RW">no</field>' +
+'      <field name="RS">11</field>' +
+'      <field name="EN">12</field>' +
+'      <field name="D4">2</field>' +
+'      <field name="D5">3</field>' +
+'      <field name="D6">4</field>' +
+'      <field name="D7">5</field>' +
+'      <value name="LCD_ROWS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">2</field>' +
+'        </block>' +
+'      </value>' +
+'      <value name="LCD_COLS">' +
+'        <block type="math_number">' +
+'          <field name="NUM">16</field>' +
+'        </block>' +
+'      </value>' +
+'    </block>' +
+'    <block type="lcd_print"></block>' +
+'  </category>' +
+'  <category id="catArrays" name="Arrays">' +
+'       <block type="array_define_empty">' +
+'           <field name="ARRAY_SIZE">1</field>' +
+'       </block>' +
+'       <block type="array_define">' +
+'           <field name="ARRAY_SIZE">1</field>' +
+'       </block>' +
+'       <block type="array_get">' +
+'       </block>' +
+'       <block type="array_set">' +
+'       </block>' +
+'  </category>' +
 '  </category>' +
 '</xml>';
