@@ -11,6 +11,12 @@ ehthumbs.db
 Thumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+Frameworks/
+Info.plist
+MacOS/
+PkgInfo
+Resources/
+package-lock.json
 
 ########
 # IDEs #
@@ -19,6 +25,7 @@ $RECYCLE.BIN/
 .idea/
 npp.session
 .editorconfig
+.vscode/
 
 ##########
 # Python #
