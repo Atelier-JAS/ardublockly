@@ -276,8 +276,21 @@ Ardublockly.TOOLBOX_XML =
 '           <field name="PIN">9</field>' +
 '           <field name="BPM">250</field>' +
 '       </block>' +
-'       <block type="note"></block>' +
 '       <block type="play_note"></block>' +
+'       <category name="Notes">' +
+'           <block type="notebase_do"></block>' +
+'           <block type="notebase_re"></block>' +
+'           <block type="notebase_mi"></block>' +
+'           <block type="notebase_fa"></block>' +
+'           <block type="notebase_sol"></block>' +
+'           <block type="notebase_la"></block>' +
+'           <block type="notebase_si"></block>' +
+'       </category>' +
+'       <category name="Octaves">' +
+'           <block type="note"></block>' +
+'           <block type="note2"></block>' +
+'           <block type="note3"></block>' +
+'       </category>' +
 '  </category>' +
 '  </category>' +
 '</xml>';

@@ -13,13 +13,13 @@ Blockly.Blocks['array_define_empty'] = {
         this.setHelpUrl('');
         this.setColour(Blockly.Blocks.Array.HUE);
         this.appendDummyInput()
-            .appendField('Array')
+            .appendField('Tableau')
             .appendField(
                 new Blockly.FieldInstance('Array',
                                           'MyArray',
                                           true, true, false),
                 'ARRAY_NAME')
-                .appendField('of')
+                .appendField('de')
                 .appendField(new Blockly.FieldNumber('SIZE'), 'ARRAY_SIZE')
                 .appendField(new Blockly.FieldDropdown(
                                     Blockly.Types.getValidTypeArray()),
@@ -33,14 +33,14 @@ Blockly.Blocks['array_define'] = {
         this.setHelpUrl('');
         this.setColour(Blockly.Blocks.Array.HUE);
         this.appendDummyInput()
-            .appendField('Array')
+            .appendField('Tableau')
             .appendField(
                 new Blockly.FieldInstance('Array',
                                           'MyArray',
                                           true, true, false),
                 'ARRAY_NAME');
         this.appendDummyInput()
-                .appendField('of')
+                .appendField('de')
                 .appendField(new Blockly.FieldNumber('SIZE', function(text) {
                     var input = parseInt ( text );
                     this.sourceBlock_.updateShape_(input);
@@ -99,7 +99,7 @@ Blockly.Blocks['array_get'] = {
   Blockly.Blocks['array_set'] = {
       init: function() {
         this.appendDummyInput()
-            .appendField("set")
+            .appendField("fixer")
             .appendField(
                 new Blockly.FieldInstance('Array',
                     'MyArray',
@@ -109,7 +109,8 @@ Blockly.Blocks['array_get'] = {
         this.appendValueInput("ARRAY_INDEX")
             .setCheck("Number");
         this.appendDummyInput()
-            .appendField("] =");
+            .appendField("]")
+            .appendField("à");
         this.appendValueInput("VALUE")
             .setCheck(null);
         this.setInputsInline(true);

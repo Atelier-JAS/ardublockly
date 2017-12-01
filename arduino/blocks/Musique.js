@@ -43,12 +43,43 @@ Blockly.Blocks['note'] = {
     }
   };
 
+  Blockly.Blocks['note2'] = {
+    init: function() {
+      this.appendValueInput("NOTE")
+          .setCheck("NoteBase");
+      this.appendDummyInput()
+          .appendField("octave")
+          .appendField(new Blockly.FieldNumber('4'), "OCTAVE");
+      this.setInputsInline(true);
+      this.setOutput(true, "Note");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+
+Blockly.Blocks['note3'] = {
+  init: function() {
+    this.appendValueInput("NOTE")
+        .setCheck("NoteBase")
+        .appendField("note");
+    this.appendValueInput("OCTAVE")
+        .setCheck("Number")
+        .appendField("octave");
+    this.setInputsInline(true);
+    this.setOutput(true, "Note");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
   Blockly.Blocks['play_note'] = {
     init: function() {
       this.appendDummyInput()
           .appendField("jouer");
       this.appendValueInput("NOTE")
-          .setCheck("Note");
+          .setCheck(["Note", "NoteBase"]);
       this.appendDummyInput()
           .appendField("durée")
           .appendField(new Blockly.FieldDropdown([["ronde","DUREE_RONDE"], ["blanche","DUREE_BLANCHE"], ["noire","DUREE_NOIRE"], ["option","DUREE_CROCHE"], ["option","DUREE_2CROCHE"], ["option","DUREE_3CROCHE"]]), "DUREE")
@@ -78,5 +109,83 @@ Blockly.Blocks['note'] = {
         // Set a warning to select a valid stepper config block
         this.setWarningText('instrument non configuré');
       }
+    }
+  };
+  Blockly.Blocks['notebase_do'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("do")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setInputsInline(true);
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['notebase_re'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("ré")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['notebase_mi'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("mi")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['notebase_fa'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("fa")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['notebase_sol'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("sol")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['notebase_la'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("la")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+  };
+  Blockly.Blocks['notebase_si'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField("si")
+          .appendField(new Blockly.FieldDropdown([["aucun","MOD_NONE"], ["dièse","MOD_DIESE"], ["bémol","MOD_BEMOL"]]), "MODIFIER");
+      this.setOutput(true, "NoteBase");
+      this.setColour(230);
+   this.setTooltip("");
+   this.setHelpUrl("");
     }
   };
